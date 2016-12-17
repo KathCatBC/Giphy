@@ -12,23 +12,32 @@
 
           console.log(giffinder)
 
-          var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + giffinder + "&api_key=dc6zaTOxFJmzC";
-      
+       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + giffinder + "&api_key=dc6zaTOxFJmzC&limit=10&rating=y&rating=pg-13&rating=g&rating=pg";   
+
           console.log("query = " + queryURL)
 
-        // need still url 
-        // moving url
-        // data state
-        // picture
 
           $.ajax({
           url: queryURL,
           method: "GET"
           }).done(function(response) {
 
+            $(".giphy-view").empty();
 
-          $("#giphy-view").text(JSON.stringify(response));
-   
+          
+           for (i=0; i<response.data.length; i++){
+                  var g = $("<img>");
+                     g.addClass("gif");
+                  g.attr("src", response.data[i].images.original_still.url);
+                  g.attr("data-still", response.data[i].images.original_still.url);
+                  g.attr("data-animate", response.data[i].images.original.url);
+                  g.attr("data-state", "still")
+               
+                  
+               $(".giphy-view").append(g);
+               $(".giphy-view").append("Rating:  " + response.data[i].rating);
+            }
+           
           });
        
 
@@ -57,13 +66,10 @@
           showmeButtons();            // call the function to display the buttons
      });
 
-      // // Generic function for displaying the movieInfo
-      // $(document).on("click", ".movie", displayMovieInfo);
-
-     $(".gif").on("click", function() {
-
-          console.log("clicked on .gif")
     
+
+     $(document).on("click", ".gif", function() {
+
           var state = $(this).attr("data-state");
 
           if (state === "still") {
@@ -79,17 +85,7 @@
      $("#button-hints-show").on("click", function() {
           
           $("#hints").show();
-          // var buttonlabel = $("#button.hints").attr("text");
-
-          // console.log(buttonlabel)
-
-
-          // if(buttonlabel == "Show Hints") {
-          //      $("#button.hints").text("Hide Hints")
-          // }
-          // else {
-          //       $("#button.hints").text("Show Hints")
-          // }
+          
 
      })  // end of hints button
    
