@@ -1,0 +1,27 @@
+/*Style information for all pages*/
+
+
+
+* {
+	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif,
+}
+
+#giphy-form, #buttons-view {
+	margin-left: 20px
+}
+
+.topics-button {
+	margin-right: 5px
+}
+
+.mainview {
+	width: 100%;
+}
+#giphy-view {
+	width: 80%
+}
+ 
+#gif-hints {
+	width: 20%
+ }
+
