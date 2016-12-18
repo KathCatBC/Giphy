@@ -7,21 +7,29 @@
 }
 
 #giphy-form, #buttons-view {
-	margin-left: 20px
+	margin-left: 20px;
 }
 
 .topics-button {
-	margin-right: 5px
+	margin-right: 5px;
 }
 
 .mainview {
 	width: 100%;
+	margin-left: 20px;
 }
-#giphy-view {
-	width: 80%
+.giphy-view {
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
 }
  
-#gif-hints {
-	width: 20%
+.gif-hints {
+	margin-left: 20px;
+ }
+
+ .gif {
+ 	float: left;
+ 	text-align: left;
  }
 

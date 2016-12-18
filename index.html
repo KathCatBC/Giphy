@@ -6,7 +6,6 @@
   <title>The Science of Giphy</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -18,18 +17,19 @@
 
      <form id="giphy-form">
           <label form="topic-input"><h4>Add Some GIFs</h4></label>
-          <input type="text" id="giphy-input"><br>
+          <input type="text" id="giphy-input">    
           <input id="add-giphy" type="submit" value="Add A Topic">
      </form>
 
-     <div class="mainview">       
-          <div id="gif-hints">
+      <div class="mainview">       
+          <div class="gif-hints">
+                <br>
                <button id="button-hints-show">Show Hints</button>
-       
-               <div id="hints">Physics, Chemistry, Magnets</div>
+                <div class="hints">Astronomy, Laser, Nebula, Mathematics, Robot, Bubbles
+                <button id= "button-hints-hide">Hide Hints</div>
           </div>
-
-        <div class="giphy-view"> </div>
+          <br><br>
+          <div class="giphy-view"> </div>
       </div>
 
      <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
