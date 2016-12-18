@@ -9,7 +9,7 @@
 
      $(document).on("click",".topics-button", function() { 
         var giffinder = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + giffinder + "&api_key=dc6zaTOxFJmzC&limit=10&rating=y&rating=pg-13&rating=g&rating=pg";   
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + giffinder + "&api_key=dc6zaTOxFJmzC&limit=10&rating=y&rating=pg-13&rating=g&rating=pg";   
 
         $.ajax({
         url: queryURL,
