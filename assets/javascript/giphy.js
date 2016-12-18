@@ -20,9 +20,10 @@
   
             for (i=0; i<response.data.length; i++){
                 var gifDiv = $("<div>");
+                gifDiv.addClass("gif-style");
                 
-                var caption = $("<p>").html("Rating:  " + response.data[i].rating);
-                
+                var caption = ("Rating:  " + response.data[i].rating);
+
                 var g = $("<img>");
                 g.addClass("gif");
                 g.attr("src", response.data[i].images.fixed_height_still.url);
@@ -30,21 +31,23 @@
                 g.attr("data-animate", response.data[i].images.fixed_height.url);
                 g.attr("data-state", "still")
          
-                var spacer = $("<p>")
+                var spacer = $("<br>")
                 
                 gifDiv.append(caption);
-                gifDiv.append(g);
                 gifDiv.append(spacer);
+                gifDiv.append(g);
                 $(".giphy-view").append(gifDiv);
                 
-            }
+            }  // end of for loop
            
-        });
+            if (response.data.length === 0) {
+                alert("Sorry that search did not work, please try again.");
+            }
+
+        })
         
-        // Alert("Sorry, there was a problem with that search.  Please try a different search.")
     });
 
-      // Function for displaying movie data
     function showmeButtons() {
         $("#buttons-view").empty();
         for (var i = 0; i < topics.length; i++) {
@@ -64,7 +67,6 @@
         if(topics.indexOf(giphynew) == -1) {  //only push into an array if it is not in there already
             topics.push(giphynew);
         }
-        $("#giphy-input").empty();  // why won't the text box empty?
         showmeButtons();            // call the function to display the buttons
     });
 

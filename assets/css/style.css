@@ -6,7 +6,7 @@
 	font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif,
 }
 
-#giphy-form, #buttons-view {
+#giphy-form, #buttons-view, .mainview {
 	margin-left: 20px;
 }
 
@@ -14,20 +14,19 @@
 	margin-right: 5px;
 }
 
-.mainview {
-	margin-left: 20px;
-}
-/*.giphy-view {
-	float: left;
-	font-size: 18px;
-	font-weight: bold;
-}*/
- 
+
 .gif-hints {
 	margin-left: 20px;
  }
 
  .gifDiv {
  	float: left;
+
+ }
+
+ .gif-style {
+ 	float: left;
+ 	margin: 20px 20px;
+ 	text-align: left;
  }
 
