@@ -15,21 +15,19 @@
 }
 
 .mainview {
-	width: 100%;
 	margin-left: 20px;
 }
-.giphy-view {
+/*.giphy-view {
 	float: left;
 	font-size: 18px;
 	font-weight: bold;
-}
+}*/
  
 .gif-hints {
 	margin-left: 20px;
  }
 
- .gif {
+ .gifDiv {
  	float: left;
- 	text-align: left;
  }
 

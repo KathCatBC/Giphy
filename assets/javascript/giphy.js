@@ -19,15 +19,24 @@
             $(".giphy-view").empty();
   
             for (i=0; i<response.data.length; i++){
+                var gifDiv = $("<div>");
+                
+                var caption = $("<p>").html("Rating:  " + response.data[i].rating);
+                
                 var g = $("<img>");
                 g.addClass("gif");
-                g.attr("src", response.data[i].images.downsized_still.url);
-                g.attr("data-still", response.data[i].images.downsized_still.url);
-                g.attr("data-animate", response.data[i].images.downsized.url);
+                g.attr("src", response.data[i].images.fixed_height_still.url);
+                g.attr("data-still", response.data[i].images.fixed_height_still.url);
+                g.attr("data-animate", response.data[i].images.fixed_height.url);
                 g.attr("data-state", "still")
+         
+                var spacer = $("<p>")
                 
-                $(".giphy-view").append(g);
-                $(".giphy-view").append("<figcaption> Rating:  " + response.data[i].rating + "</figcaption><br><br>");
+                gifDiv.append(caption);
+                gifDiv.append(g);
+                gifDiv.append(spacer);
+                $(".giphy-view").append(gifDiv);
+                
             }
            
         });
