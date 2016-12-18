@@ -40,8 +40,11 @@
                 
             }  // end of for loop
            
-            if (response.data.length === 0) {
-                alert("Sorry that search did not work, please try again.");
+            if (response.data.length === 0) {        // if the user enters a topic that does
+                var badgif = topics.indexOf(giffinder) // not return gifs  - Alert the user
+                topics.splice(badgif, 1)               // and remove the button
+                showmeButtons()                        // then refresh the button list
+                alert("Sorry that search did not work, please try a different search.");
             }
 
         })
@@ -52,7 +55,7 @@
         $("#buttons-view").empty();
         for (var i = 0; i < topics.length; i++) {
             var a = $("<button>");
-            a.addClass("topics-button");
+            a.addClass("topics-button btn btn-default");
             searchString = topics[i].replace(/ /g, "+")
             a.attr("data-name", searchString);   
             a.text(topics[i]);
