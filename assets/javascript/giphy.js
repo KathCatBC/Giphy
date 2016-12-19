@@ -70,6 +70,7 @@
         if(topics.indexOf(giphynew) == -1) {  //only push into an array if it is not in there already
             topics.push(giphynew);
         }
+        $("#giphy-input").val("")
         showmeButtons();            // call the function to display the buttons
     });
 
